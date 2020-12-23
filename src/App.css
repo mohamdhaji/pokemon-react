@@ -214,7 +214,7 @@
 /* ###  Home  ### */
 
 .Home-page {
-  height: calc(100vh - 180px);
+  height: calc(100vh - 181px);
   background-color: #f5db13;
 }
 
@@ -366,7 +366,7 @@
 /* carousel slider style end */
 
 .slider-container {
-  height: calc(100vh - 405px);
+  height: calc(100vh - 406px);
   width: 90%;
   margin: auto;
 }
