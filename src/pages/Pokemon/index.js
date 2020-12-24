@@ -58,7 +58,6 @@ export default function Pokemon() {
   const [settings, setSettings] = useState(config);
 
   useEffect(() => {
-    console.log("hi")
     const pokemons = [];
     const promises = [];
     for (let i = 1; i <= 18; i++) {

@@ -475,7 +475,8 @@
 /* carousel slider style start */
 
 .slick-slide > div {
-  margin: 0 15px;
+  margin: 30px 30px;
+  
 }
 
 .slick-slide *:focus {
