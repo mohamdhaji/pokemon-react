@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/pokemon-react/static/css/main.c2fab063.chunk.css",
-    "main.js": "/pokemon-react/static/js/main.f961edf7.chunk.js",
-    "main.js.map": "/pokemon-react/static/js/main.f961edf7.chunk.js.map",
+    "main.css": "/pokemon-react/static/css/main.1414be82.chunk.css",
+    "main.js": "/pokemon-react/static/js/main.a522cafb.chunk.js",
+    "main.js.map": "/pokemon-react/static/js/main.a522cafb.chunk.js.map",
     "runtime-main.js": "/pokemon-react/static/js/runtime-main.56dbbc08.js",
     "runtime-main.js.map": "/pokemon-react/static/js/runtime-main.56dbbc08.js.map",
     "static/css/2.99b10b83.chunk.css": "/pokemon-react/static/css/2.99b10b83.chunk.css",
-    "static/js/2.3b0d86fd.chunk.js": "/pokemon-react/static/js/2.3b0d86fd.chunk.js",
-    "static/js/2.3b0d86fd.chunk.js.map": "/pokemon-react/static/js/2.3b0d86fd.chunk.js.map",
+    "static/js/2.47e9255e.chunk.js": "/pokemon-react/static/js/2.47e9255e.chunk.js",
+    "static/js/2.47e9255e.chunk.js.map": "/pokemon-react/static/js/2.47e9255e.chunk.js.map",
     "static/js/3.e3f4a2a0.chunk.js": "/pokemon-react/static/js/3.e3f4a2a0.chunk.js",
     "static/js/3.e3f4a2a0.chunk.js.map": "/pokemon-react/static/js/3.e3f4a2a0.chunk.js.map",
     "index.html": "/pokemon-react/index.html",
     "static/css/2.99b10b83.chunk.css.map": "/pokemon-react/static/css/2.99b10b83.chunk.css.map",
-    "static/css/main.c2fab063.chunk.css.map": "/pokemon-react/static/css/main.c2fab063.chunk.css.map",
-    "static/js/2.3b0d86fd.chunk.js.LICENSE.txt": "/pokemon-react/static/js/2.3b0d86fd.chunk.js.LICENSE.txt",
+    "static/css/main.1414be82.chunk.css.map": "/pokemon-react/static/css/main.1414be82.chunk.css.map",
+    "static/js/2.47e9255e.chunk.js.LICENSE.txt": "/pokemon-react/static/js/2.47e9255e.chunk.js.LICENSE.txt",
     "static/media/App.css": "/pokemon-react/static/media/404.97b8b7fc.png",
     "static/media/beka.da86c6d1.png": "/pokemon-react/static/media/beka.da86c6d1.png",
     "static/media/slick-theme.css": "/pokemon-react/static/media/slick.c94f7671.ttf",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.56dbbc08.js",
     "static/css/2.99b10b83.chunk.css",
-    "static/js/2.3b0d86fd.chunk.js",
-    "static/css/main.c2fab063.chunk.css",
-    "static/js/main.f961edf7.chunk.js"
+    "static/js/2.47e9255e.chunk.js",
+    "static/css/main.1414be82.chunk.css",
+    "static/js/main.a522cafb.chunk.js"
   ]
 }
