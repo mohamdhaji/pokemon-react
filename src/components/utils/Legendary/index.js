@@ -20,7 +20,7 @@ export default function Legendary({ type, pokemons }) {
     let s;
     let e;
     if(start === 0){
-      s=length-(length%6)
+      s=length%6 !== 0 ? length-(length%6) : length-6;
       e=length
     }
     else {
