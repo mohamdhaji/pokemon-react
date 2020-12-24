@@ -12,7 +12,6 @@ export default function Legendary({ type, pokemons }) {
     const length=pokemons.length;
     const s= start+6 >= length ? 0 : start+6;
     const e=end === length ? 6 : end+6 > length ? length : end+6;
-    console.log(start,end)
     setPaging({start:s,end:e})
   }
   const handlePaggingLeft =()=>{
@@ -21,18 +20,12 @@ export default function Legendary({ type, pokemons }) {
     let s;
     let e;
     if(start === 0){
-      s=length-6
+      s=length-(length%6)
       e=length
-    }else if (start - 6 < 0){
-      s=0;
-      e=start;
-    }else if(end == length){
-      e=start;
-      s=start-6
     }
     else {
+      e=start
       s=start-6;
-      e=end-6
     }
     setPaging({start:s,end:e})
 
