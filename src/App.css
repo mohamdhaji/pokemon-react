@@ -8,6 +8,14 @@
   font-family: Karla;
 }
 
+.main-header__links  a{
+  text-decoration: none;
+  color:black;
+}
+.main-header__links a:hover{
+  border-bottom:2.5px solid white;
+}
+
 .pokemon-model {
   position: fixed;
   z-index: 200;

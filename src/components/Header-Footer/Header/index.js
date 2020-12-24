@@ -13,8 +13,15 @@ export default function Header() {
           <li>
             <StyledLink to="/pokemon">Pokédex</StyledLink>
           </li>
-          <li> <StyledLink to="/legendaries">Legendaries</StyledLink></li>
-          <li>Documentation</li>
+          <li>
+            {" "}
+            <StyledLink to="/legendaries">Legendaries</StyledLink>
+          </li>
+          <li>
+            <a  href="https://pokeapi.co" target="_blank">
+              Documentation
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

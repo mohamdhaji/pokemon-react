@@ -1,5 +1,6 @@
 import React from "react";
 import beka from "../../assets/images/beka.png"
+import StyledLink from "../../components/utils/styledLink"
 export default function Home() {
   return (
     <div className="Home-page">
@@ -16,7 +17,8 @@ export default function Home() {
             abilities
           </div>
           <button className="Home-button">
-          See pokemons
+          <StyledLink to="/pokemon">See pokemons</StyledLink>
+          
           </button>
         </div>
         <img className="Home-image"src={beka} alt="beka" />

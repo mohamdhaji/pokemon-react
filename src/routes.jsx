@@ -9,8 +9,8 @@ export default function Routes() {
   return (
     <Layout>
       <Switch>
-        <Route  path="/pokemon" component={Pokemon} />
-        <Route  path="/legendaries" component={Legendaries}/>
+        <Route exact path="/pokemon" component={Pokemon} />
+        <Route exact path="/legendaries" component={Legendaries}/>
         <Route exact path="/" component={Home} />
         <Route component={PageNotFound} />
       </Switch>
