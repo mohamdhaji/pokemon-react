@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SeachInput from "../../components/utils/searchInput";
-import PokemonFilter from "../../components/utils/pokemonFilter";
+import PokemonFilter from "../../components/utils/Pokemon/pokemonFilter";
 import Slider from "react-slick";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-import PekaCard from "../../components/utils/pekaCard";
+import PekaCard from "../../components/utils/Pokemon/pekaCard";
 import axios from "axios";
 import PokemonModel from "../../components/utils/Modals/pokemonModel";
 
@@ -22,7 +23,6 @@ const config = {
   slidesToShow: 3,
   slidesToScroll: 3,
   rows: 2,
-  
 };
 
 export default function Pokemon() {
@@ -35,6 +35,7 @@ export default function Pokemon() {
     },
   });
 
+  const [loading, setLoading] = useState(true);
   const [showModel, setShowModal] = useState(false);
   const [selectedFilters, setFilters] = useState({});
   const [search, setSearch] = useState("");
@@ -86,11 +87,12 @@ export default function Pokemon() {
     }
     Promise.all([...promises]).then((values) => {
       setPokemons(pokemons);
+      setLoading(false);
     });
 
     // need fixing
     const handleHightChange = () => {
-      if (window.innerHeight >= 1000 ) {
+      if (window.innerHeight >= 1000) {
         setSettings((oldSettings) => {
           return { ...oldSettings, rows: 3 };
         });
@@ -267,14 +269,17 @@ export default function Pokemon() {
         </div>
       </div>
       <div className="slider-container">
-        {pokeCards && showSlider ? (
+      {
+        loading ? <CircularProgress size="80px" style={{ color: "#00bcd4",position:"absolute",top:0,right:0,left:0,bottom:0,margin:"auto" }} thickness={5} /> 
+        :pokeCards && showSlider ? (
           <Slider className="slick-slider" {...settings}>
             {pokeCards}
           </Slider>
         ) : (
           <div className="pokemon-cards">{pokeCards}</div>
-        )}
-      </div>
+        )
+      }
+    </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ export default function Legendary({ type, pokemons }) {
     setPaging({start:s,end:e})
   }
   const handlePaggingLeft =()=>{
-    const {start,end}=paging
+    const {start}=paging
     const length=pokemons.length;
     let s;
     let e;
