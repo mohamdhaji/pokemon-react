@@ -170,13 +170,20 @@ export default function Pokemon() {
       }
       return result;
     }, []);
-   
 
     if (data.length <= 3 && settings.rows != 1) {
       setSettings({ ...settings, rows: 1 });
-    } else if ( data.length > 3 && data.length <= 6 && settings.rows != 2) {
+    } else if (
+      data.length > 3 &&
+      settings.rows != 2 &&
+      window.innerHeight < 1000
+    ) {
       setSettings({ ...settings, rows: 2 });
-    } else if (data.length > 6 && settings.rows != 3 && window.innerHeight >= 1000) {
+    } else if (
+      data.length > 6 &&
+      settings.rows != 3 &&
+      window.innerHeight >= 1000
+    ) {
       setSettings({ ...settings, rows: 3 });
     }
 
