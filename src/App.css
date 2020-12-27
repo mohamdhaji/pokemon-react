@@ -627,14 +627,12 @@
 }
 
 .right-arrow {
-  width: 20px;
-  height: 20px;
+  width: 22px;
   cursor: pointer;
   align-self: center;
 }
 .left-arrow {
-  width: 20px;
-  height: 20px;
+  width: 22px;
   cursor: pointer;
   align-self: center;
 }
