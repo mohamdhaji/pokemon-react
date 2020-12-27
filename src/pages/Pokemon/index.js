@@ -158,7 +158,7 @@ export default function Pokemon() {
     weight = Number.MAX_VALUE,
     experience = Number.MAX_VALUE
   ) => {
-    let width = "100%";
+    // let width = "100%";
     const data = pokemons.reduce((result, p) => {
       if (
         p["name"].startsWith(search) &&
@@ -170,17 +170,19 @@ export default function Pokemon() {
       }
       return result;
     }, []);
-    if (
-      (data.length <= 6 && settings.rows === 2) ||
-      (data.length <= 9 && settings.rows === 3)
-    ) {
-      width = "30%";
+   
+
+    if (data.length <= 3 && settings.rows != 1) {
+      setSettings({ ...settings, rows: 1 });
+    } else if ( data.length > 3 && data.length <= 6 && settings.rows != 2) {
+      setSettings({ ...settings, rows: 2 });
+    } else if (data.length > 6 && settings.rows != 3 && window.innerHeight >= 1000) {
+      setSettings({ ...settings, rows: 3 });
     }
 
     return data.map((p) => (
       <PekaCard
         setPokemon={() => setPokemon(p)}
-        width={width}
         key={p.name}
         name={p.name}
         experience={p.experience}
@@ -269,17 +271,26 @@ export default function Pokemon() {
         </div>
       </div>
       <div className="slider-container">
-      {
-        loading ? <CircularProgress size="80px" style={{ color: "#00bcd4",position:"absolute",top:0,right:0,left:0,bottom:0,margin:"auto" }} thickness={5} /> 
-        :pokeCards && showSlider ? (
+        {loading ? (
+          <CircularProgress
+            size="80px"
+            style={{
+              color: "#00bcd4",
+              position: "absolute",
+              top: 0,
+              right: 0,
+              left: 0,
+              bottom: 0,
+              margin: "auto",
+            }}
+            thickness={5}
+          />
+        ) : (
           <Slider className="slick-slider" {...settings}>
             {pokeCards}
           </Slider>
-        ) : (
-          <div className="pokemon-cards">{pokeCards}</div>
-        )
-      }
-    </div>
+        )}
+      </div>
     </div>
   );
 }
