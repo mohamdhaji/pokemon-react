@@ -495,7 +495,7 @@
   margin: 30px 30px;
 }
 .slick-slide {
-  max-width:33%!important;
+  max-width:33% !important;
 
 }
 .slick-slide *:focus {
