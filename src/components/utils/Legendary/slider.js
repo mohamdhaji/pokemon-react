@@ -3,7 +3,7 @@ import ImgCard from "./imgCard";
 import rightArrow from "../../../assets/images/arrowRight.png";
 import leftArrow from "../../../assets/images/arrowLeft.png";
 
-export default function Slider({ pokemons, setCard, paging,handlePaggingRight,handlePaggingLeft }) {
+export default function Slider({ pokemons, setCard, paging,handlePaggingRight,handlePaggingLeft,selectedCardName }) {
   const renderCards = () => {
     const cards = [];
     const { start, end } = paging;
@@ -14,6 +14,8 @@ export default function Slider({ pokemons, setCard, paging,handlePaggingRight,ha
           key={pokemons[i].name}
           name={pokemons[i].name}
           img={pokemons[i].img}
+          id={pokemons[i].id}
+          selected={selectedCardName === pokemons[i].name}
         />
       );
       cards.push(card);

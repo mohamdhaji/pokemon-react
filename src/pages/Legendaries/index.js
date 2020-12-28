@@ -12,6 +12,7 @@ export default function Legendaries() {
         .get(`https://pokeapi.co/api/v2/type/${i}`)
         .then((res) => {
           const type = res.data;
+          console.log(type)
           const typename = type.name;
           const pokemons = [];
           const length = type.pokemon.length > 16 ? 16 : type.pokemon.length;
@@ -22,7 +23,7 @@ export default function Legendaries() {
             if(id === 0)
             continue;
             const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-            pokemons.push({ name: pokename, img: img });
+            pokemons.push({ name: pokename, img: img});
           }
           types.push({ type: typename, pokemons: pokemons });
         });
