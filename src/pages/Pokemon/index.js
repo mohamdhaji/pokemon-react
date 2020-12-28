@@ -177,26 +177,27 @@ export default function Pokemon() {
     }, []);
 
     const slidesToShow = data.length < 3 ? data.length : 3;
-
-    if (window.innerHeight <= 800 && settings.rows !== 1) {
+    const height=window.innerHeight
+    if (height <= 800 && settings.rows !== 1) {
       setSettings({ ...settings, slidesToShow, rows: 1 });
     } else if (
       (data.length <= 4 && settings.rows !== 1) ||
       (data.length <= 4 && settings.slidesToShow !== slidesToShow)
     ) {
       setSettings({ ...settings, slidesToShow, rows: 1 });
-    } else if (data.length > 4 && data.length <= 7 && settings.rows !== 2 && window.innerHeight > 800) {
+    } else if (data.length > 4 && data.length <= 7 && settings.rows !== 2 && height > 800 ) {
       setSettings({ ...settings, slidesToShow, rows: 2 });
     } else if (
       data.length > 7 &&
       settings.rows !== 3 &&
-      window.innerHeight >= 1000
+      height >= 1000
     ) {
       setSettings({ ...settings, slidesToShow, rows: 3 });
     } else if (
       settings.rows !== 2 &&
       data.length > 4 &&
-      window.innerHeight > 800
+      height > 800 &&
+      height < 1000
     ) {
       setSettings({ ...settings, slidesToShow, rows: 2 });
     }
