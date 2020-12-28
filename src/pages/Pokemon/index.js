@@ -175,7 +175,7 @@ export default function Pokemon() {
 
     const slidesToShow=data.length < 3 ? data.length : 3
 
-    if (data.length <= 4 && settings.rows != 1 || data.length <= 3 && settings.slidesToShow != slidesToShow ) {
+    if (data.length <= 4 && settings.rows != 1 || data.length <= 4 && settings.slidesToShow != slidesToShow ) {
      
       
       setSettings({ ...settings,slidesToShow ,rows: 1 });
