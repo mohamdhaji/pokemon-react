@@ -261,8 +261,10 @@ export default function Pokemon() {
       {showModel ? (
         <>
           {" "}
-          <div onClick={closeModal} className="backdrop"></div>{" "}
+          <div onClick={closeModal} className="backdrop">
+
           <PokemonModel closeModal={closeModal} pokemon={selectedCard} />{" "}
+          </div>{" "}
         </>
       ) : null}
 
