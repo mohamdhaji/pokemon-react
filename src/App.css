@@ -348,8 +348,8 @@
 }
 
 .pokemon-filter__items {
-  position:absolute;
-  z-index:10px;
+  position: absolute;
+  z-index: 10px;
   padding: 0px;
   margin: 0px;
   list-style: none;
@@ -495,8 +495,7 @@
   margin: 30px 30px;
 }
 .slick-slide {
-  max-width:33% !important;
-
+  max-width: 33% !important;
 }
 .slick-slide *:focus {
   outline: none;
@@ -567,6 +566,7 @@
   flex-direction: column;
   color: white;
   margin-top: 35px;
+  position: relative;
 }
 
 .legendary-card__title {
@@ -635,11 +635,14 @@
   width: 22px;
   cursor: pointer;
   align-self: center;
+  
+
 }
 .left-arrow {
   width: 22px;
   cursor: pointer;
   align-self: center;
+ 
 }
 
 .legendary__slider {
@@ -657,7 +660,7 @@
   margin-top: 50px;
   display: flex;
   margin-bottom: 20px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -666,7 +669,7 @@
   margin-bottom: 40px;
   transition: 0.3s;
   cursor: pointer;
-  margin: 0px 15px;
+  margin: 0px 10px;
   min-width: 140px;
 }
 .pokemon-img__card:hover {

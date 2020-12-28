@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import CardInfo from "./cardInfo";
 import Slider from "./slider";
+import ImgCard from "./imgCard";
 
 
 export default function Legendary({ type, pokemons }) {
@@ -31,11 +32,15 @@ export default function Legendary({ type, pokemons }) {
 
   }
 
+ 
+
   return (
     <div className="legendary-card">
       <div className="legendary-card__title">{type}</div>
       <CardInfo selectedCard={selectedCard} />
+
       <Slider handlePaggingLeft={handlePaggingLeft} handlePaggingRight={handlePaggingRight} paging={paging} setCard={setCard} pokemons={pokemons} />
+
     </div>
   );
 }
