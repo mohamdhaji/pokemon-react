@@ -25,7 +25,6 @@ const config = {
   rows: 2,
 };
 
-
 export default function Pokemon() {
   const [filters, showHideFilter] = useState({
     type: { items: ["Fire", "Normal", "Bug", "Water", "Grass"], show: false },
@@ -98,6 +97,10 @@ export default function Pokemon() {
       if (window.innerHeight >= 1000) {
         setSettings((oldSettings) => {
           return { ...oldSettings, rows: 3 };
+        });
+      } else if (window.innerHeight <= 800) {
+        setSettings((oldSettings) => {
+          return { ...oldSettings, rows: 1 };
         });
       } else if (window.innerHeight < 1000) {
         setSettings((oldSettings) => {
@@ -173,26 +176,29 @@ export default function Pokemon() {
       return result;
     }, []);
 
-    const slidesToShow=data.length < 3 ? data.length : 3
+    const slidesToShow = data.length < 3 ? data.length : 3;
 
-    if (data.length <= 4 && settings.rows != 1 || data.length <= 4 && settings.slidesToShow != slidesToShow ) {
-     
-      
-      setSettings({ ...settings,slidesToShow ,rows: 1 });
-    } else if (data.length > 4 && data.length <= 7 && settings.rows != 2) {
-      setSettings({ ...settings,slidesToShow, rows: 2 });
+    if (window.innerHeight <= 800 && settings.rows !== 1) {
+      setSettings({ ...settings, slidesToShow, rows: 1 });
+    } else if (
+      (data.length <= 4 && settings.rows !== 1) ||
+      (data.length <= 4 && settings.slidesToShow !== slidesToShow)
+    ) {
+      setSettings({ ...settings, slidesToShow, rows: 1 });
+    } else if (data.length > 4 && data.length <= 7 && settings.rows !== 2 && window.innerHeight > 800) {
+      setSettings({ ...settings, slidesToShow, rows: 2 });
     } else if (
       data.length > 7 &&
-      settings.rows != 3 &&
+      settings.rows !== 3 &&
       window.innerHeight >= 1000
     ) {
-      setSettings({ ...settings,slidesToShow, rows: 3 });
+      setSettings({ ...settings, slidesToShow, rows: 3 });
     } else if (
-      settings.rows != 2 &&
+      settings.rows !== 2 &&
       data.length > 4 &&
-      window.innerHeight < 1000
+      window.innerHeight > 800
     ) {
-      setSettings({ ...settings,slidesToShow, rows: 2 });
+      setSettings({ ...settings, slidesToShow, rows: 2 });
     }
 
     return data.map((p) => (
@@ -232,7 +238,7 @@ export default function Pokemon() {
 
     return filteredPokemons;
   };
-  
+
   const closeModal = () => {
     setShowModal(false);
     setSelectedCard(initModal);
