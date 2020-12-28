@@ -651,6 +651,7 @@
   flex-direction: row;
   justify-self: center;
   align-items: center;
+  width:90%;
 }
 .flex-center {
   justify-content: center;
@@ -669,7 +670,7 @@
   margin-bottom: 40px;
   transition: 0.3s;
   cursor: pointer;
-  margin: 0px 10px;
+  margin: 0px 15px;
   min-width: 140px;
 }
 .pokemon-img__card:hover {
