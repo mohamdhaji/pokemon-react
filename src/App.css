@@ -263,7 +263,6 @@
   margin-top: 6%;
   margin-bottom: 10%;
   font-weight: 580;
-  max-width: 600px;
 }
 
 .Home-button {
@@ -282,7 +281,7 @@
 }
 .Home-image {
   margin-top: 50px;
-  width: 55%;
+  width: 50%;
   height: 90%;
   max-width: 1000px;
   position: absolute;
@@ -671,6 +670,7 @@
   margin-bottom: 20px;
   justify-content: space-between;
   width: 100%;
+  max-width:1400px;
 }
 
 .pokemon-img__card {
@@ -691,6 +691,17 @@
 
     height: 205px;
   }
+  .Home-content__title{
+    font-size:40px;
+  }
+  .Home-button {
+    font-size:18px;
+  }
+  .Home-content__text{
+    font-size:24px;
+
+  }
+
 }
 
 .black-shadow {
