@@ -25,6 +25,7 @@ const config = {
   rows: 2,
 };
 
+
 export default function Pokemon() {
   const [filters, showHideFilter] = useState({
     type: { items: ["Fire", "Normal", "Bug", "Water", "Grass"], show: false },
@@ -66,6 +67,7 @@ export default function Pokemon() {
         .get(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((res) => {
           const pokemon = res.data;
+          const id = pokemon.id;
           const abilities = pokemon.abilities[0].ability.name;
           const name = pokemon.name;
           const experience = pokemon.base_experience;
@@ -74,13 +76,14 @@ export default function Pokemon() {
           const img = `https://pokeres.bastionbot.org/images/pokemon/${i}.png`;
           const type = pokemon.types[0].type.name;
           pokemons.push({
-            name: name,
-            experience: experience,
-            weight: weight,
-            img: img,
-            type: type,
-            order: order,
-            abilities: abilities,
+            id,
+            name,
+            experience,
+            weight,
+            img,
+            type,
+            order,
+            abilities,
           });
         });
       promises.push(promise);
@@ -158,7 +161,6 @@ export default function Pokemon() {
     weight = Number.MAX_VALUE,
     experience = Number.MAX_VALUE
   ) => {
-    // let width = "100%";
     const data = pokemons.reduce((result, p) => {
       if (
         p["name"].startsWith(search) &&
@@ -171,26 +173,32 @@ export default function Pokemon() {
       return result;
     }, []);
 
-    if (data.length <= 3 && settings.rows != 1) {
-      setSettings({ ...settings, rows: 1 });
+    const slidesToShow=data.length < 3 ? data.length : 3
+
+    if (data.length <= 4 && settings.rows != 1 || data.length <= 3 && settings.slidesToShow != slidesToShow ) {
+     
+      
+      setSettings({ ...settings,slidesToShow ,rows: 1 });
+    } else if (data.length > 4 && data.length <= 7 && settings.rows != 2) {
+      setSettings({ ...settings,slidesToShow, rows: 2 });
     } else if (
-      data.length > 3 &&
-      settings.rows != 2 &&
-      window.innerHeight < 1000
-    ) {
-      setSettings({ ...settings, rows: 2 });
-    } else if (
-      data.length > 6 &&
+      data.length > 7 &&
       settings.rows != 3 &&
       window.innerHeight >= 1000
     ) {
-      setSettings({ ...settings, rows: 3 });
+      setSettings({ ...settings,slidesToShow, rows: 3 });
+    } else if (
+      settings.rows != 2 &&
+      data.length > 4 &&
+      window.innerHeight < 1000
+    ) {
+      setSettings({ ...settings,slidesToShow, rows: 2 });
     }
 
     return data.map((p) => (
       <PekaCard
         setPokemon={() => setPokemon(p)}
-        key={p.name}
+        key={p.id}
         name={p.name}
         experience={p.experience}
         weight={p.weight}
@@ -224,11 +232,7 @@ export default function Pokemon() {
 
     return filteredPokemons;
   };
-  const handleShowSlider = (pokeCards) => {
-    if (settings.rows === 2 && pokeCards.length > 6) return true;
-    else if (settings.rows === 3 && pokeCards.length > 9) return true;
-    else return false;
-  };
+  
   const closeModal = () => {
     setShowModal(false);
     setSelectedCard(initModal);
@@ -245,7 +249,6 @@ export default function Pokemon() {
     else return false;
   };
   const pokeCards = pokemons.length > 0 ? renderCards() : [];
-  const showSlider = handleShowSlider(pokeCards);
   return (
     <div>
       {showModel ? (

@@ -494,7 +494,10 @@
 .slick-slide > div {
   margin: 30px 30px;
 }
+.slick-slide {
+  max-width:30%!important;
 
+}
 .slick-slide *:focus {
   outline: none;
 }
